@@ -4,70 +4,28 @@
     <h1 class="display-5 mt-4">Летим из Новосибирска</h1>
     <p class="mb-4">Найдено 15 туров, от 26 000 до 84 600 и от 4 ночей до 15 ночей</p>
     <!-- CARDS -->
-      {% for tour in tours.values() %}
-    <div class="row mt-5">
+    <div class="container">
+    <div class="row">
+        {% for tour in tours.values() %}
       <div class="col-4">
         <div class="card mb-4">
-          <img src="https://place-hold.it/300x200" class="card-img-top img-fluid" alt="">
+          <img src="{{ tour.picture }}" class="card-img-top img-fluid" alt="">
           <div class="card-body">
             <h2 class="h5 card-title">{{ tour.title }}</h2>
-            <p class="card-text">{{ tour.description }}</p>
-            <a href="#" class="btn btn-sm btn-primary">Подробнее</a>
+              {% filter truncate %}
+            <p class="card-text">{{ tour.description }} </p>
+              {% endfilter %}<br>
+            <h2 class="h5 card-title">Цена {{ tour.price }}</h2>
+            <h2 class="h5 card-title">Звезды {{ tour.stars }}</h2>
+            <h2 class="h5 card-title">Страна {{ tour.country }}</h2>
+            <h2 class="h5 card-title">Ночей {{ tour.nights }}</h2>
+            <h2 class="h5 card-title">Дата {{ tour.date }}</h2>
           </div>
         </div>
       </div>
-      <div class="col-4">
-        <div class="card mb-4">
-          <img src="https://place-hold.it/300x200" class="card-img-top img-fluid" alt="">
-          <div class="card-body">
-            <h2 class="h5 card-title">Hotel title</h2>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-sm btn-primary">Подробнее</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-4">
-        <div class="card mb-4">
-          <img src="https://place-hold.it/300x200" class="card-img-top img-fluid" alt="">
-          <div class="card-body">
-            <h2 class="h5 card-title">Hotel title</h2>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-sm btn-primary">Подробнее</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-4">
-        <div class="card mb-4">
-          <img src="https://place-hold.it/300x200" class="card-img-top img-fluid" alt="">
-          <div class="card-body">
-            <h2 class="h5 card-title">Hotel title</h2>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-sm btn-primary">Подробнее</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-4">
-        <div class="card mb-4">
-          <img src="https://place-hold.it/300x200" class="card-img-top img-fluid" alt="">
-          <div class="card-body">
-            <h2 class="h5 card-title">Hotel title</h2>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-sm btn-primary">Подробнее</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-4">
-        <div class="card mb-4">
-          <img src="https://place-hold.it/300x200" class="card-img-top img-fluid" alt="">
-          <div class="card-body">
-            <h2 class="h5 card-title">Hotel title</h2>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-sm btn-primary">Подробнее</a>
-          </div>
-        </div>
-      </div>
+        {% endfor %}
     </div>
-{% endfor %}
+    </div>
   </main>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

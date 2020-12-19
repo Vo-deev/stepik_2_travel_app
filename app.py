@@ -5,18 +5,18 @@ app = Flask(__name__)
 
 @app.route('/')
 def main():     # страница открывается
-    output = render_template('index.html')
+    output = render_template('index.html', tours=tours)
     return output
 
 
 @app.route('/departures/<departure>/')
 def dep(departure):      # страница открывается
-    output = render_template('departure.html', departure=departure)
+    output = render_template('departure.html', departure=departure, tours=tours)
     return output
 
 
 @app.route('/tours/<id>/')
-def tour(id):     # страница открывается
+def tour_id(id):     # страница открывается
     output = render_template('tour.html', id=id, tours=tours)
     return output
 
@@ -279,5 +279,10 @@ def render_not_found(error):    # работает
 def render_server_error(error):     # работает
     return "<h1>Что-то не так, но мы все починим</h1>"
 
+
+app.run(debug=True)
+
+
 if __name__ == '__main__':
     app.run()
+
