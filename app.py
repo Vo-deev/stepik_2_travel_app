@@ -280,9 +280,6 @@ def render_server_error(error):     # работает
     return "<h1>Что-то не так, но мы все починим</h1>"
 
 
-app.run(debug=True)
-
-
 if __name__ == '__main__':
     app.run()
 
