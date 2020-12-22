@@ -3,6 +3,7 @@
   <main class="container mt-3">
     <h1 class="display-5 mt-4">Летим из Новосибирска</h1>
     <p class="mb-4">Найдено 15 туров, от 26 000 до 84 600 и от 4 ночей до 15 ночей</p>
+{% endfor %}
     <!-- CARDS -->
     <div class="container">
     <div class="row">
@@ -11,9 +12,9 @@
         <div class="card mb-4">
           <img src="{{ tour.picture }}" class="card-img-top img-fluid" alt="">
           <div class="card-body">
-            <h2 class="h5 card-title">{{ tour.title }}</h2>
+            <h2 class="h5 card-title">{{ current_tour['title'] }}</h2>
               {% filter truncate %}
-            <p class="card-text">{{ tour.description }} </p>
+            <p class="card-text">{{ current_tour['description'] }}</p>
               {% endfilter %}<br>
             <h2 class="h5 card-title">Цена {{ tour.price }}</h2>
             <h2 class="h5 card-title">Звезды {{ tour.stars }}</h2>
