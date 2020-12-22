@@ -16,11 +16,11 @@
               {% filter truncate %}
             <p class="card-text">{{ current_tour['description'] }}</p>
               {% endfilter %}<br>
-            <h2 class="h5 card-title">Цена {{ tour.price }}</h2>
-            <h2 class="h5 card-title">Звезды {{ tour.stars }}</h2>
-            <h2 class="h5 card-title">Страна {{ tour.country }}</h2>
-            <h2 class="h5 card-title">Ночей {{ tour.nights }}</h2>
-            <h2 class="h5 card-title">Дата {{ tour.date }}</h2>
+            <h2 class="h5 card-title">Цена {{ current_tour['price'] }}</h2>
+            <h2 class="h5 card-title">Звезды {{ current_tour['description'] }}</h2>
+            <h2 class="h5 card-title">Страна {{ current_tour['country'] }}</h2>
+            <h2 class="h5 card-title">Ночей {{ current_tour['nights'] }}</h2>
+            <h2 class="h5 card-title">Дата {{ current_tour['date'] }}</h2>
           </div>
         </div>
       </div>
